@@ -94,7 +94,7 @@ position: relative;
 overflow: hidden;
 }
 #homeId img{
-
+ transform: translateZ(0);
     width: 100%;
     animation: slide-in-bottom 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -146,6 +146,7 @@ ul{
     padding-left: 0;
 }
 #rekordsId{ 
+     transform: translateZ(0);
     animation: slide-in-right 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     text-align: center;
     margin: 0 auto;   
