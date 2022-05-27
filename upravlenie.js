@@ -53,8 +53,7 @@ function stop() {
 }
 
 
-
-let names=document.querySelector(".names")
+let recor=document.getElementById("recordsId")
 let ttt=false
 let treck=document.querySelector(".treck")
 treck.addEventListener("touchmove",jh)
@@ -67,7 +66,7 @@ ttt=false
   }
 }
 if(ttt=true){
- names.style.display="block"
+ recor.style.display="block"
  isPaused=true
 }
 if(ttt=false){
