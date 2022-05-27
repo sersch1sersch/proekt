@@ -210,18 +210,22 @@ max-height: 1000px;
 }
 .left{
     position: absolute;
-    top:525px;
+    top:500px;
     border-radius: 40px;
     color:red;
     font-weight: bold;
     border: solid green 3px;
+    height: 50px;
+    width: 57px;
 }
 .right{
     position: absolute;
-    top:525px;
+    top:500px;
     left:291px;
     border-radius: 40px;
     color:red;
     font-weight: bold;
     border: solid green 3px;
+    height: 50px;
+  
 }
