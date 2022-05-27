@@ -56,7 +56,8 @@ function stop() {
 
 let names=document.querySelector(".names")
 let ttt=false
-document.body.addEventListener("touchmove",jh)
+let treck=document.querySelector(".treck")
+treck.addEventListener("touchmove",jh)
 function jh(){
   if(ttt===false){
 ttt=true
