@@ -51,3 +51,25 @@ function stop() {
   speedX=0;
   car.style.transform="rotate("+ 0 + "deg)";
 }
+
+
+
+let names=document.querySelector(".names")
+let ttt=false
+window.addEventListener("touchmove",jh)
+function jh(){
+  if(ttt===false){
+ttt=true
+  }
+  else{
+ttt=false
+  }
+}
+if(ttt=true){
+ names.style.display="block"
+ isPaused=true
+}
+if(ttt=false){
+  names.style.display="none"
+  isPaused=false
+ }
