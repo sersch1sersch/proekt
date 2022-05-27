@@ -99,7 +99,7 @@ overflow: hidden;
     animation: slide-in-bottom 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-@-webkit-keyframes slide-in-bottom {
+@keyframes slide-in-bottom {
     0% {
       -webkit-transform: translateY(1000px);
               transform: translateY(1000px);
@@ -155,7 +155,7 @@ ul{
     font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-@-webkit-keyframes slide-in-right {
+@keyframes slide-in-right {
     0% {
       -webkit-transform: translateX(1000px);
               transform: translateX(1000px);
