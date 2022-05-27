@@ -52,24 +52,3 @@ function stop() {
   car.style.transform="rotate("+ 0 + "deg)";
 }
 
-
-let recor=document.getElementById("recordsId")
-let ttt=false
-let treck=document.querySelector(".treck")
-treck.addEventListener("touchmove",jh)
-function jh(){
-  if(ttt===false){
-ttt=true
-  }
-  else{
-ttt=false
-  }
-}
-if(ttt=true){
- recor.style.display="block"
- isPaused=true
-}
-if(ttt=false){
-  names.style.display="none"
-  isPaused=false
- }
