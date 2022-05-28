@@ -1,17 +1,13 @@
 let start= document.querySelector(".button")
 let start1= document.querySelector(".button1")
-//let start2= document.querySelector(".button2")
 let treck= document.querySelector(".treck")
 let polyline1= document.querySelector(".polyline1")
 let polyline2= document.querySelector(".polyline2")
 let line1= document.querySelector(".line1")
 let point=document.querySelector(".point")
-point.value=0;
 let heart=document.querySelector(".heart-point")
-heart.value=3
 let car= document.querySelector(".car")// главная машинка
 let audio=document.querySelector(".Audio")
-let randomCar=[];
 let car1=document.querySelector(".automotive")
 let car2=document.querySelector(".convertible")
 let car3=document.querySelector(".delahaye")
@@ -20,9 +16,11 @@ let car5=document.querySelector(".police")
 let car6=document.querySelector(".sports")
 let car7=document.querySelector(".bus")
 let car8 =document.querySelector(".pngwing")
-let cars=[car1,car2,car3,car4,car8,car5,car6,car7];
-
-let automotive={
+let cars=[car1,car2,car3,car4,car8,car5,car6,car7];//масив машинок
+heart.value=3//жизни
+point.value=0;//очки
+let randomCar=[];
+let automotive={// размеры машин
   width:50,
    height:100,
 }
@@ -54,23 +52,23 @@ let bus={
 let pngwing={
   width:45,
      height:60
-}
+}// размеры машин
 
-let randoms;
+let randoms;//генерация чисел
 let igra=0;// игра не начата
 randomCarY=0;
-speedY=0;
-yy=0;
-y1=-1000000;
-speedX=0;
-top1=410;
-left1=147;
-speedPolosa=0;
-let topPolosa1=-110
-let topPolosa2=-260
-let topPolosa3=-420
-let topPolosa4=-580
-polosa1={
+speedY=0;//скорость гл. машины
+yy=0;//изменение скорости полос
+y1=-1000000;//координата полос
+speedX=0;//скорость гл. машины
+top1=410;//координата гл. машины
+left1=147;;//координата гл. машины
+speedPolosa=0;//скорость машин
+let topPolosa1=-110//начальная координата 1 машинки
+let topPolosa2=-260//начальная координата 2 машинки
+let topPolosa3=-420//начальная координата 3 машинки
+let topPolosa4=-580//начальная координата 4 машинки или бонуса
+polosa1={//хэш из свойств машин
   topPolosa:-110,
   leftPolosa:15,
   speedPolosa:0
@@ -90,21 +88,21 @@ polosa4={
   leftPolosa:279,
   speedPolosa:4
 }
-let reboot=false;//нажата ли кнопка
+let reboot=false;//флаг нажата ли кнопка
 let polosaN=[];
 let polosa=[polosa1.leftPolosa,polosa2.leftPolosa,polosa3.leftPolosa,polosa4.leftPolosa,]
 start.addEventListener("click",startgame);//старт игры
 function startgame(){
   reboot=true
 if(igra===0){
- audio.play()
-igra=1;// игра началась
+ audio.play()//запуск музыки
+igra=1;//флаг игра началась
 yy=7//скорость полос
-speedPolosa=7
-topPolosa1=-110
-topPolosa2=-260
-topPolosa3=-420
-topPolosa4=-580
+speedPolosa=7//увеличение скорости машин
+topPolosa1=-110//координаты машин
+topPolosa2=-260//координаты машин
+topPolosa3=-420//координаты машин
+topPolosa4=-580//координаты машин
 }
 }
 start1.addEventListener("click",rr)
@@ -117,7 +115,6 @@ start1.addEventListener("click",rr)
    car.style.transform="rotate("+ 0+ "deg)";
      setTimeout(tick1,3000);
     function tick1(){
-   
       topPolosa1=-110
   topPolosa2=-260
   topPolosa3=-420
@@ -128,10 +125,8 @@ start1.addEventListener("click",rr)
         randomCar4.style.display="block";
       isPaused=false
     }
-    
    }
  
-
 polyline1.setAttribute("points",'87,'+y1+" "+'87,1500')
 polyline2.setAttribute("points",'260,'+y1+" "+'260,1500')
 
@@ -162,8 +157,7 @@ polosaN.push(polosa[randomPolosa])
 
 let k=0//счетчик
 
-window.onbeforeunload=unload;
-
+window.onbeforeunload=unload;//проверка на перезагрузку
 function unload(EO) {
   EO=EO||window.event;
   if(reboot===true){
@@ -201,3 +195,112 @@ function reloads(){
         randomCar4.style.display="block";
 }
 
+let pravila= document.getElementById("pravila")
+let games= document.getElementById("games")
+let home= document.getElementById("home")
+let rekords= document.getElementById("rekords")
+let pravila1= document.getElementById("pravilaId")
+let games1= document.getElementById("gamesId")
+let home1= document.getElementById("homeId")
+let rekords1= document.getElementById("rekordsId")
+window.onhashchange=switchToStateFromURLHash;
+//SPA
+var SPAState={}; 
+function switchToStateFromURLHash() {
+  var URLHash=window.location.hash;
+  var stateJSON=decodeURIComponent(URLHash.substr(1));
+  if ( stateJSON!="" )
+  SPAState=JSON.parse(stateJSON);
+else
+  SPAState={pagename:'Main'};
+  var pageHTML="";
+  switch ( SPAState.pagename ) {
+    case 'Main':
+home1.style.display="block"
+games1.style.display = 'none';
+pravila1.style.display = 'none';
+rekords1.style.display = 'none';
+break;
+case 'Game':
+  home1.style.display="none"
+  games1.style.display = 'block';
+  pravila1.style.display = 'none';
+  rekords1.style.display = 'none';
+      break;
+      case 'Rules':
+        home1.style.display="none"
+        games1.style.display = 'none';
+        pravila1.style.display = 'block';
+        rekords1.style.display = 'none';
+        break;
+        case 'Scores':
+        home1.style.display="none"
+        games1.style.display = 'none';
+        pravila1.style.display = 'none';
+        rekords1.style.display = 'block';
+        restoreInfo()
+        break;
+  }
+}
+function switchToState(newState) {
+  location.hash=encodeURIComponent(JSON.stringify(newState));
+}
+home.onclick = function(EO) {
+  switchToState( { pagename:'Main' } );
+  EO.preventDefault();
+}
+
+games.onclick = function(EO) {
+  switchToState( { pagename:'Game' } );
+  EO.preventDefault();
+}
+
+pravila.onclick = function(EO) {
+  switchToState( { pagename:'Rules' } );
+  EO.preventDefault();
+}
+rekords.onclick = function(EO) {
+  switchToState( { pagename:'Scores' } );
+  EO.preventDefault();
+}
+switchToStateFromURLHash();
+//получение рекордов из хранилища
+var ajaxHandlerScript="https://fe.it-academy.by/AjaxStringStorage2.php"; 
+var stringName='MARGAEV_RACING_RECORDS'; 
+function restoreInfo() { 
+  $.ajax(
+    { 
+    url : ajaxHandlerScript, type : 'POST', cache : false, dataType:'json', 
+    data : { f : 'READ', n : stringName }, 
+    success : readReady, error : errorHandler 
+  } 
+  ); 
+} 
+function readReady(callresult) { 
+  if ( callresult.error!=undefined ) 
+    console.log(callresult.error); 
+  else if ( callresult.result!="" ) { 
+    var result=JSON.parse(callresult.result); 
+    createRecordTable(rekords1,result); 
+  } 
+} 
+function compareScore(a,b) { 
+  return b.record-a.record; 
+} 
+function createRecordTable(pole,data){
+  var pageHTML = ''; 
+  data.sort(compareScore); 
+  pageHTML += '<p class ="rec"> Рекорды игры </p>';
+  pageHTML += "<br>"
+  for(var i = 0; i < data.length; i++){ 
+    if(i > 9){ 
+      break; 
+    } 
+   pageHTML +=  (i+1) + '. ' + ' ' + data[i].name + ' - ' + ' ' + data[i].record +" "+'очков'; 
+   pageHTML+="<br>"
+  } 
+  pole.innerHTML = pageHTML; 
+} 
+function errorHandler(jqXHR,statusStr,errorStr) { 
+  alert(statusStr+' '+errorStr); 
+}

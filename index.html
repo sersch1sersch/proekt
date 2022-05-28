@@ -11,7 +11,7 @@
 <body>
 	<audio class="Audio_krash" src="./mp3/avaria.mp3" audio.currentTime = 0 ></audio>
 	<audio class="Audio_bonus" src="./mp3/bonusa-iz-igry.mp3" audio.currentTime = 0 ></audio>
-	<audio class="Audio" src="./mp3/raboty-dvigatelya.mp3" audio.currentTime = 0 ></audio>
+	<audio class="Audio" src="./mp3/raboty-dvigatelya.mp3" audio.currentTime = 0 loop="loop"></audio>
 	<div class="header">
 		<div class="knopki">
 			<ul>
@@ -27,13 +27,11 @@
 	</div>
 	<div id="pravilaId" >
 		<p class="text">Игрок обязан обьезжать машинки на дороге и
-			 собирать бонусные жетоны.
-			 Чем больше соберет жетонов - тем выше в рейтинге 
-			 поднимется.
+			 собирать бонусные жетоны.Проезжать по жетону нужно строго по прямой.
+			  В случае касания боком машинки любой из сторон жетона - очки не защитываются.
+			 Чем больше соберет жетонов - тем выше в рейтинге поднимешся.
 			  При аварии у игрока уменьшаются жизни.
-			   Когда игрок врежется  3 раза - игра завершится. Во время игры скорость
-			   машинок будет увеличиваться и будут появляться дополнительные машины.
-			    Удачи.</p>
+			   Когда игрок врежется 3 раза - игра завершится. Удачи.</p>
 	</div>
 	<div id="gamesId" >
 		<div class="menu">
@@ -149,12 +147,10 @@
 	</div>
 
 	<script src="https://fe.it-academy.by/JQ/jquery.js"></script>
-	<script src ="poluch-img.js"></script>
-	<script src ="tick.js"></script>
-	<script src ="model.js"></script>
-<script src ="spa.js"></script>
+	<script src ="Model.js"></script>
 <script src ="index.js"></script>
-	<script src ="upravlenie.js"></script>
+	<script src ="View.js"></script>
+	<script src ="Controller.js"></script>
 
 </body>
 </html>
