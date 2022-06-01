@@ -299,6 +299,7 @@ function createRecordTable(pole,data){
    pageHTML +=  (i+1) + '. ' + ' ' + data[i].name + ' - ' + ' ' + data[i].record +" "+'очков'; 
    pageHTML+="<br>"
   } 
+  
   pole.innerHTML = pageHTML; 
 } 
 function errorHandler(jqXHR,statusStr,errorStr) { 

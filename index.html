@@ -11,6 +11,7 @@
 <body>
 	<audio class="Audio_krash" src="./mp3/avaria.mp3" audio.currentTime = 0 ></audio>
 	<audio class="Audio_bonus" src="./mp3/bonusa-iz-igry.mp3" audio.currentTime = 0 ></audio>
+	<audio class="go" src="./mp3/go.mp3" audio.currentTime = 0 ></audio>
 	<audio class="Audio" src="./mp3/raboty-dvigatelya.mp3" audio.currentTime = 0 loop="loop"></audio>
 	<div class="header">
 		<div class="knopki">
@@ -43,8 +44,10 @@
 			<input class="point"></input>
 			<img src="./img/pngwing.png" alt="bonus">
 		</div>
+	
 		<div class="pole">
 			<div class="treck">
+				
 				<img class="pngwing" src="./img/pngwing.png" >
 				<img class="automotive" src="./img/automotive.png" >
 				<img class="convertible" src="./img/convertible.png"  >
@@ -115,7 +118,7 @@
 						</svg>
 				</div>		
 				<svg class="trecksvg" width=350 height=550 xmlns='http://www.w3.org/2000/svg'>
-					<rect x=0 y=0 width=350 height=550 fill=dimgray />
+					<rect class="rect1" x=0 y=0 width=350 height=550 fill=dimgray />
 					<line class="line1" x1=172 y1=0 x2=172 y2=550 stroke=yellow style="stroke-width:2"/>
 					<line x1=176 y1=0 x2=176 y2=550 stroke=yellow style="stroke-width:2"/>
 					<polyline class="polyline1" points='87,0 87,550 ' stroke=white
@@ -124,11 +127,10 @@
 					fill=none stroke-dasharray='40,30' stroke-dashoffset=20 />
 				</svg>
 				<div class="tach">
-					<button class="left">Лево</button>
-					<button class="right">Право</button>
+					<button class="left" >Лево</button>
+					<button class="right" >Право</button>
 				</div>
 			</div>
-			
 		</div>
 	</div>
 	<div id="rekordsId" >
@@ -151,6 +153,5 @@
 <script src ="index.js"></script>
 	<script src ="View.js"></script>
 	<script src ="Controller.js"></script>
-
 </body>
 </html>

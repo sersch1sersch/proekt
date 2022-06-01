@@ -49,4 +49,45 @@ function stop() {
   speedX=0;
   car.style.transform="rotate("+ 0 + "deg)";
 }
+//touchmove
+var touchStart = null; //Точка начала касания
+var touchPosition = null; //Текущая позиция
 
+//Перехватываем события
+treck.addEventListener("touchstart", function (e) { TouchStart(e); }); //Начало касания
+treck.addEventListener("touchmove", function (e) { TouchMove(e); }); //Движение пальцем по экрану
+treck.addEventListener("touchend", function (e) { TouchEnd(e); });//Пользователь отпустил экран
+
+function TouchStart(e)
+{
+    //Получаем текущую позицию касания
+    touchStart = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
+    touchPosition = { x: touchStart.x, y: touchStart.y };
+}
+function TouchMove(e)
+{
+touchPosition = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };//Получаем новую позицию
+}
+function TouchEnd(e)
+{
+    CheckAction(); //Определяем, какой жест совершил пользователь
+    //Очищаем позиции
+    touchStart = null;
+    touchPosition = null;
+}
+function CheckAction()
+{
+    var ddd = //Получаем расстояния от начальной до конечной точек по обеим осям
+    {
+   	 x: touchStart.x - touchPosition.x,
+    };
+    let go=document.querySelector(".go")
+   		 if(ddd.x > 0) //Если значение больше нуля, значит пользователь двигал пальцем справа налево
+   		 {     
+             go.play()
+   		 }
+   		 else //Иначе он двигал им слева направо
+   		 { 
+            go.play()
+        }
+}
