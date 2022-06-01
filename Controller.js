@@ -12,7 +12,7 @@ document.body.addEventListener("keydown", (a) => {//управление гла�
         car.style.transform="rotate("+ 10 + "deg)";
         }
 })
-document.body.addEventListener("keyup", (a) => {//управление главной машинкой
+document.body.addEventListener("keyup", (a) => {//управление с клавиатуры главной машинкой
     if (a.key === 'ArrowDown')
     speedY=0
     
@@ -88,6 +88,6 @@ function CheckAction()
    		 }
    		 else //Иначе он двигал им слева направо
    		 { 
-            go.play()
+           //какой-то код
         }
 }
