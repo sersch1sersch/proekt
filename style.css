@@ -154,8 +154,7 @@ ul{
 #rekordsId{ 
     transform: translateZ(0);
     animation: slide-in-right 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    text-align: center;
-    margin: 0 auto;   
+    text-align: center; 
     letter-spacing: 2px;
     margin-top: 100px;
     color: rgb(40, 165, 148);
