@@ -1,3 +1,9 @@
+ window.onload = function () {
+        setTimeout(function () {
+            document.getElementsByTagName("body")[0].style.visibility = "visible";
+        }, 500);
+    }
+
 let start= document.querySelector(".button")
 let start1= document.querySelector(".button1")
 let treck= document.querySelector(".treck")
