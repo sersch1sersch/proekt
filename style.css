@@ -7,7 +7,9 @@ body{
     -moz-user-select: none;      
     -ms-user-select: none;     
     user-select: none;   
-    visibility: hidden
+    visibility: hidden;
+   
+
 }
 .pole{
     display: flex;
@@ -152,24 +154,39 @@ ul{
     padding-left: 0;
 }
 #rekordsId{ 
+  
     transform: translateZ(0);
-    animation: slide-in-right 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    text-align: center; 
+    animation: slide-in-fwd-top 4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    text-align: center;
     letter-spacing: 2px;
     margin-top: 100px;
     color: rgb(40, 165, 148);
     font-size: 30px;
+  
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-@keyframes slide-in-right {
+
+@-webkit-keyframes slide-in-fwd-top {
     0% {
-      -webkit-transform: translateX(1000px);
-              transform: translateX(1000px);
+      -webkit-transform: translateZ(-1400px) translateY(-800px);
+              transform: translateZ(-1400px) translateY(-800px);
       opacity: 0;
     }
     100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
+      -webkit-transform: translateZ(0) translateY(0);
+              transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-fwd-top {
+    0% {
+      -webkit-transform: translateZ(-1400px) translateY(-800px);
+              transform: translateZ(-1400px) translateY(-800px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+              transform: translateZ(0) translateY(0);
       opacity: 1;
     }
   }
