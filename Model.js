@@ -225,8 +225,10 @@ let start2= document.querySelector(".button2")
         function fi(){
           if(!isPaused){
             isPaused = true;
+            audio.pause()
           } else {
             isPaused = false;
+            audio.play()
         }
         };
        
